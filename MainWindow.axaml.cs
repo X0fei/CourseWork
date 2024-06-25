@@ -1,4 +1,5 @@
 using Avalonia.Controls;
+using Avalonia.Interactivity;
 
 namespace Game2048
 {
@@ -7,6 +8,12 @@ namespace Game2048
         public MainWindow()
         {
             InitializeComponent();
+        }
+        public void PlayButtonClick(object sender, RoutedEventArgs args)
+        {
+            GameWindow window = new();
+            window.Show();
+            Close();
         }
     }
 }

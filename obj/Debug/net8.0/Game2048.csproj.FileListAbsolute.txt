@@ -125,3 +125,13 @@ C:\Users\PROFI\Desktop\Xofei\Game2048\obj\Debug\net8.0\Game2048.csproj.Up2Date
 C:\Users\PROFI\Desktop\Xofei\Game2048\obj\Debug\net8.0\Game2048.genruntimeconfig.cache
 C:\Users\PROFI\Desktop\Xofei\Game2048\obj\Debug\net8.0\ref\Game2048.dll
 C:\Users\PROFI\Desktop\Xofei\Game2048\obj\Debug\net8.0\Game2048.sourcelink.json
+C:\Users\PROFI\Desktop\Xofei\Game2048\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\PROFI\Desktop\Xofei\Game2048\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\PROFI\Desktop\Xofei\Game2048\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\PROFI\Desktop\Xofei\Game2048\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\PROFI\Desktop\Xofei\Game2048\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\PROFI\Desktop\Xofei\Game2048\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\PROFI\Desktop\Xofei\Game2048\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\PROFI\Desktop\Xofei\Game2048\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\PROFI\Desktop\Xofei\Game2048\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\PROFI\Desktop\Xofei\Game2048\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll

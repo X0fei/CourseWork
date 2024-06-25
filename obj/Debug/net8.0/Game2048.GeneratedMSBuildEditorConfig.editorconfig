@@ -20,5 +20,8 @@ build_property.EnableGeneratedComInterfaceComImportInterop =
 [C:/Users/PROFI/Desktop/Xofei/Game2048/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Users/PROFI/Desktop/Xofei/Game2048/GameWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Users/PROFI/Desktop/Xofei/Game2048/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

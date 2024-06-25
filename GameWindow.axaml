@@ -1,0 +1,94 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="650"
+        x:Class="Game2048.GameWindow"
+		x:CompileBindings="False"
+		Background="#fdf7f0"
+		Width="900" Height="650"
+		MinWidth="900" MinHeight="650"
+		WindowStartupLocation="CenterScreen"
+        Title="Игра 2048">
+	<Border HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="3" Background="#bbaba1">
+		<ListBox Name="PlayingArea" Width="390" Height="390" Background="#bbaba1">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+						<StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+							<Border Width="100" Height="100" CornerRadius="2" Background="#f0e4dc">
+								<TextBlock Text="{Binding Cell1}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							</Border>
+							<Border  CornerRadius="2" Background="#f0e4dc">
+								<TextBlock Text="{Binding Cell2}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							</Border>
+							<TextBlock Text="{Binding Cell3}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<TextBlock Text="{Binding Cell4}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+						</StackPanel>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+		<!--<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="100"/>
+				<ColumnDefinition Width="95"/>
+				<ColumnDefinition Width="95"/>
+				<ColumnDefinition Width="100"/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="100"/>
+				<RowDefinition Height="95"/>
+				<RowDefinition Height="95"/>
+				<RowDefinition Height="100"/>
+			</Grid.RowDefinitions>
+			<Border Grid.Row="0" Grid.Column="0" Margin="10 10 5 5" CornerRadius="2" Background="#f0e4dc">
+				<TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			</Border>
+			<Border Grid.Row="0" Grid.Column="1" Margin="5 10 5 5" CornerRadius="2" Background="#f0e4dc">
+				<TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			</Border>
+			<Border Grid.Row="0" Grid.Column="2" Margin="5 10 5 5" CornerRadius="2" Background="#f0e4dc">
+				<TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			</Border>
+			<Border Grid.Row="0" Grid.Column="3" Margin="5 10 10 5" CornerRadius="2" Background="#f0e4dc">
+				<TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			</Border>
+			<Border Grid.Row="1" Grid.Column="0" Margin="10 5 5 5" CornerRadius="2" Background="#f0e4dc">
+				<TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			</Border>
+			<Border Grid.Row="1" Grid.Column="1" Margin="5" CornerRadius="2" Background="#f0e4dc">
+				<TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			</Border>
+			<Border Grid.Row="1" Grid.Column="2" Margin="5" CornerRadius="2" Background="#f0e4dc">
+				<TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			</Border>
+			<Border Grid.Row="1" Grid.Column="3" Margin="5 5 10 5" CornerRadius="2" Background="#f0e4dc">
+				<TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			</Border>
+			<Border Grid.Row="2" Grid.Column="0" Margin="10 5 5 5" CornerRadius="2" Background="#f0e4dc">
+				<TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			</Border>
+			<Border Grid.Row="2" Grid.Column="1" Margin="5" CornerRadius="2" Background="#f0e4dc">
+				<TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			</Border>
+			<Border Grid.Row="2" Grid.Column="2" Margin="5" CornerRadius="2" Background="#f0e4dc">
+				<TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			</Border>
+			<Border Grid.Row="2" Grid.Column="3" Margin="5 5 10 5" CornerRadius="2" Background="#f0e4dc">
+				<TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			</Border>
+			<Border Grid.Row="3" Grid.Column="0" Margin="10 5 5 10" CornerRadius="2" Background="#f0e4dc">
+				<TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			</Border>
+			<Border Grid.Row="3" Grid.Column="1" Margin="5 5 5 10" CornerRadius="2" Background="#f0e4dc">
+				<TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			</Border>
+			<Border Grid.Row="3" Grid.Column="2" Margin="5 5 5 10" CornerRadius="2" Background="#f0e4dc">
+				<TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			</Border>
+			<Border Grid.Row="3" Grid.Column="3" Margin="5 5 10 10" CornerRadius="2" Background="#f0e4dc">
+				<TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			</Border>
+		</Grid>-->
+	</Border>
+	
+</Window>
