@@ -124,3 +124,4 @@ C:\Users\PROFI\Desktop\Xofei\Game2048\obj\Debug\net8.0\Game2048.pdb
 C:\Users\PROFI\Desktop\Xofei\Game2048\obj\Debug\net8.0\Game2048.csproj.Up2Date
 C:\Users\PROFI\Desktop\Xofei\Game2048\obj\Debug\net8.0\Game2048.genruntimeconfig.cache
 C:\Users\PROFI\Desktop\Xofei\Game2048\obj\Debug\net8.0\ref\Game2048.dll
+C:\Users\PROFI\Desktop\Xofei\Game2048\obj\Debug\net8.0\Game2048.sourcelink.json

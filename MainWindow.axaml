@@ -2,8 +2,21 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="650"
         x:Class="Game2048.MainWindow"
-        Title="Game2048">
-	
+		Background="#fdf7f0"
+		Width="900" Height="650"
+		MinWidth="900" MinHeight="650"
+		WindowStartupLocation="CenterScreen"
+        Title="Игра 2048">
+	<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+		<TextBlock HorizontalAlignment="Center" Margin="0 0 0 50" FontSize="70" FontWeight="Black" Foreground="#767069">
+			2048
+		</TextBlock>
+		<Button HorizontalAlignment="Center" Margin="50" Width="130" Height="50" CornerRadius="0" Background="#baaca1">
+			<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="ExtraBlack" Foreground="#fffdf6">
+				ИГРАТЬ
+			</TextBlock>
+		</Button>
+	</StackPanel>
 </Window>
