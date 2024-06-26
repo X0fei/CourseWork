@@ -11,8 +11,8 @@ namespace Game2048
         }
         public void PlayButtonClick(object sender, RoutedEventArgs args)
         {
-            GameWindow window = new();
-            window.Show();
+            GameWindow gameWindow = new();
+            gameWindow.Show();
             Close();
         }
     }

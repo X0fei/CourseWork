@@ -10,24 +10,35 @@
 		MinWidth="900" MinHeight="650"
 		WindowStartupLocation="CenterScreen"
         Title="Игра 2048">
-	<Border HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="3" Background="#bbaba1">
-		<ListBox Name="PlayingArea" Width="390" Height="390" Background="#bbaba1">
-			<ListBox.ItemTemplate>
-				<DataTemplate>
+	<StackPanel VerticalAlignment="Center">
+		<TextBlock Name="Victory" IsVisible="False" HorizontalAlignment="Center" Margin="20" FontSize="50" FontWeight="Black" Foreground="Green">
+			Победа!
+		</TextBlock>
+		<TextBlock Name="Fail" IsVisible="False" HorizontalAlignment="Center" Margin="20" FontSize="50" FontWeight="Black" Foreground="Red">
+			Вы проиграли
+		</TextBlock>
+		<Border HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="3" Background="#bbaba1">
+			<ListBox Name="PlayingArea" Width="390" Height="390" Background="#bbaba1">
+				<ListBox.ItemTemplate>
+					<DataTemplate>
 						<StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
 							<Border Width="100" Height="100" CornerRadius="2" Background="#f0e4dc">
-								<TextBlock Text="{Binding Cell1}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+								<TextBlock Text="{Binding Cell1}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="#756e66"/>
 							</Border>
-							<Border  CornerRadius="2" Background="#f0e4dc">
-								<TextBlock Text="{Binding Cell2}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<Border Width="100" Height="100" CornerRadius="2" Background="#f0e4dc">
+								<TextBlock Text="{Binding Cell2}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="#756e66"/>
 							</Border>
-							<TextBlock Text="{Binding Cell3}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-							<TextBlock Text="{Binding Cell4}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<Border Width="100" Height="100" CornerRadius="2" Background="#f0e4dc">
+								<TextBlock Text="{Binding Cell3}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="#756e66"/>
+							</Border>
+							<Border Width="100" Height="100" CornerRadius="2" Background="#f0e4dc">
+								<TextBlock Text="{Binding Cell4}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="#756e66"/>
+							</Border>
 						</StackPanel>
-				</DataTemplate>
-			</ListBox.ItemTemplate>
-		</ListBox>
-		<!--<Grid>
+					</DataTemplate>
+				</ListBox.ItemTemplate>
+			</ListBox>
+			<!--<Grid>
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="100"/>
 				<ColumnDefinition Width="95"/>
@@ -89,6 +100,19 @@
 				<TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 			</Border>
 		</Grid>-->
-	</Border>
+		</Border>
+		<Button Name="RightButton" Click="MoveRight" HorizontalAlignment="Center" Background="#baaca1" Foreground="#fffdf6">
+			Вправо
+		</Button>
+		<Button Name="LeftButton" Click="MoveLeft" HorizontalAlignment="Center" Background="#baaca1" Foreground="#fffdf6">
+			Влево
+		</Button>
+		<Button Name="UpButton" HorizontalAlignment="Center" Background="#baaca1" Foreground="#fffdf6">
+			Вверх
+		</Button>
+		<Button Name="DownButton" HorizontalAlignment="Center" Background="#baaca1" Foreground="#fffdf6">
+			Вниз
+		</Button>
+	</StackPanel>
 	
 </Window>

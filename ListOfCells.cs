@@ -11,31 +11,31 @@ namespace Game2048
         public static List<Cells> cells = [
             new Cells()
             {
-                Cell1 = 0,
-                Cell2 = 0,
-                Cell3 = 0,
-                Cell4 = 0,
+                Cell1 = null,
+                Cell2 = 4,
+                Cell3 = 2,
+                Cell4 = 4,
             },
             new Cells()
             {
-                Cell1 = 0,
-                Cell2 = 0,
-                Cell3 = 0,
-                Cell4 = 0,
+                Cell1 = 4,
+                Cell2 = 2,
+                Cell3 = 4,
+                Cell4 = 2,
             },
             new Cells()
             {
-                Cell1 = 0,
-                Cell2 = 0,
-                Cell3 = 0,
-                Cell4 = 0,
+                Cell1 = 2,
+                Cell2 = 4,
+                Cell3 = 2,
+                Cell4 = 4,
             },
             new Cells()
             {
-                Cell1 = 0,
-                Cell2 = 0,
-                Cell3 = 0,
-                Cell4 = 0,
+                Cell1 = 4,
+                Cell2 = 2,
+                Cell3 = 4,
+                Cell4 = 2,
             },
         ];
     }
