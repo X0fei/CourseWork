@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Xofei\\Desktop\\CourseWork\\Game2048.csproj": {}
+    "C:\\Users\\PROFI\\Desktop\\Xofei\\Game2048\\Game2048.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Xofei\\Desktop\\CourseWork\\Game2048.csproj": {
+    "C:\\Users\\PROFI\\Desktop\\Xofei\\Game2048\\Game2048.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Xofei\\Desktop\\CourseWork\\Game2048.csproj",
+        "projectUniqueName": "C:\\Users\\PROFI\\Desktop\\Xofei\\Game2048\\Game2048.csproj",
         "projectName": "Game2048",
-        "projectPath": "C:\\Users\\Xofei\\Desktop\\CourseWork\\Game2048.csproj",
-        "packagesPath": "C:\\Users\\Xofei\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Xofei\\Desktop\\CourseWork\\obj\\",
+        "projectPath": "C:\\Users\\PROFI\\Desktop\\Xofei\\Game2048\\Game2048.csproj",
+        "packagesPath": "C:\\Users\\PROFI\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PROFI\\Desktop\\Xofei\\Game2048\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Xofei\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PROFI\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

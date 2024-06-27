@@ -1,29 +1,29 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Xofei\\Desktop\\CourseWork\\",
+  "WorkspaceRootPath": "C:\\Users\\PROFI\\Desktop\\Xofei\\Game2048\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EFA25773-414F-4864-B8F8-D2FFEF697021}|Game2048.csproj|c:\\users\\xofei\\desktop\\coursework\\gamewindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EFA25773-414F-4864-B8F8-D2FFEF697021}|Game2048.csproj|c:\\users\\profi\\desktop\\xofei\\game2048\\gamewindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EFA25773-414F-4864-B8F8-D2FFEF697021}|Game2048.csproj|solutionrelative:gamewindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EFA25773-414F-4864-B8F8-D2FFEF697021}|Game2048.csproj|c:\\users\\xofei\\desktop\\coursework\\cells.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EFA25773-414F-4864-B8F8-D2FFEF697021}|Game2048.csproj|solutionrelative:cells.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EFA25773-414F-4864-B8F8-D2FFEF697021}|Game2048.csproj|c:\\users\\xofei\\desktop\\coursework\\listofcells.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EFA25773-414F-4864-B8F8-D2FFEF697021}|Game2048.csproj|c:\\users\\profi\\desktop\\xofei\\game2048\\listofcells.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EFA25773-414F-4864-B8F8-D2FFEF697021}|Game2048.csproj|solutionrelative:listofcells.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EFA25773-414F-4864-B8F8-D2FFEF697021}|Game2048.csproj|c:\\users\\xofei\\desktop\\coursework\\gamewindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "AbsoluteMoniker": "D:0:0:{EFA25773-414F-4864-B8F8-D2FFEF697021}|Game2048.csproj|c:\\users\\profi\\desktop\\xofei\\game2048\\cells.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFA25773-414F-4864-B8F8-D2FFEF697021}|Game2048.csproj|solutionrelative:cells.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFA25773-414F-4864-B8F8-D2FFEF697021}|Game2048.csproj|c:\\users\\profi\\desktop\\xofei\\game2048\\gamewindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
       "RelativeMoniker": "D:0:0:{EFA25773-414F-4864-B8F8-D2FFEF697021}|Game2048.csproj|solutionrelative:gamewindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EFA25773-414F-4864-B8F8-D2FFEF697021}|Game2048.csproj|c:\\users\\xofei\\desktop\\coursework\\mainwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EFA25773-414F-4864-B8F8-D2FFEF697021}|Game2048.csproj|c:\\users\\profi\\desktop\\xofei\\game2048\\mainwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EFA25773-414F-4864-B8F8-D2FFEF697021}|Game2048.csproj|solutionrelative:mainwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EFA25773-414F-4864-B8F8-D2FFEF697021}|Game2048.csproj|c:\\users\\xofei\\desktop\\coursework\\mainwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "AbsoluteMoniker": "D:0:0:{EFA25773-414F-4864-B8F8-D2FFEF697021}|Game2048.csproj|c:\\users\\profi\\desktop\\xofei\\game2048\\mainwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
       "RelativeMoniker": "D:0:0:{EFA25773-414F-4864-B8F8-D2FFEF697021}|Game2048.csproj|solutionrelative:mainwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
     }
   ],
@@ -40,9 +40,9 @@
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "MainWindow.axaml",
-              "DocumentMoniker": "C:\\Users\\Xofei\\Desktop\\CourseWork\\MainWindow.axaml",
+              "DocumentMoniker": "C:\\Users\\PROFI\\Desktop\\Xofei\\Game2048\\MainWindow.axaml",
               "RelativeDocumentMoniker": "MainWindow.axaml",
-              "ToolTip": "C:\\Users\\Xofei\\Desktop\\CourseWork\\MainWindow.axaml",
+              "ToolTip": "C:\\Users\\PROFI\\Desktop\\Xofei\\Game2048\\MainWindow.axaml",
               "RelativeToolTip": "MainWindow.axaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-06-25T06:22:17.151Z",
@@ -52,9 +52,9 @@
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "MainWindow.axaml.cs",
-              "DocumentMoniker": "C:\\Users\\Xofei\\Desktop\\CourseWork\\MainWindow.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\PROFI\\Desktop\\Xofei\\Game2048\\MainWindow.axaml.cs",
               "RelativeDocumentMoniker": "MainWindow.axaml.cs",
-              "ToolTip": "C:\\Users\\Xofei\\Desktop\\CourseWork\\MainWindow.axaml.cs",
+              "ToolTip": "C:\\Users\\PROFI\\Desktop\\Xofei\\Game2048\\MainWindow.axaml.cs",
               "RelativeToolTip": "MainWindow.axaml.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -65,9 +65,9 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "GameWindow.axaml",
-              "DocumentMoniker": "C:\\Users\\Xofei\\Desktop\\CourseWork\\GameWindow.axaml",
+              "DocumentMoniker": "C:\\Users\\PROFI\\Desktop\\Xofei\\Game2048\\GameWindow.axaml",
               "RelativeDocumentMoniker": "GameWindow.axaml",
-              "ToolTip": "C:\\Users\\Xofei\\Desktop\\CourseWork\\GameWindow.axaml",
+              "ToolTip": "C:\\Users\\PROFI\\Desktop\\Xofei\\Game2048\\GameWindow.axaml",
               "RelativeToolTip": "GameWindow.axaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-06-25T09:14:44.587Z",
@@ -77,37 +77,37 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "GameWindow.axaml.cs",
-              "DocumentMoniker": "C:\\Users\\Xofei\\Desktop\\CourseWork\\GameWindow.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\PROFI\\Desktop\\Xofei\\Game2048\\GameWindow.axaml.cs",
               "RelativeDocumentMoniker": "GameWindow.axaml.cs",
-              "ToolTip": "C:\\Users\\Xofei\\Desktop\\CourseWork\\GameWindow.axaml.cs",
+              "ToolTip": "C:\\Users\\PROFI\\Desktop\\Xofei\\Game2048\\GameWindow.axaml.cs",
               "RelativeToolTip": "GameWindow.axaml.cs",
-              "ViewState": "AQIAAOAAAAAAAAAAAAAQwNwAAAANAAAA",
+              "ViewState": "AQIAABYAAAAAAAAAAAAgwBEAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-25T09:14:42.634Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Cells.cs",
-              "DocumentMoniker": "C:\\Users\\Xofei\\Desktop\\CourseWork\\Cells.cs",
+              "DocumentMoniker": "C:\\Users\\PROFI\\Desktop\\Xofei\\Game2048\\Cells.cs",
               "RelativeDocumentMoniker": "Cells.cs",
-              "ToolTip": "C:\\Users\\Xofei\\Desktop\\CourseWork\\Cells.cs",
+              "ToolTip": "C:\\Users\\PROFI\\Desktop\\Xofei\\Game2048\\Cells.cs",
               "RelativeToolTip": "Cells.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAATAAAA",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAvwBYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-25T11:40:21.535Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "ListOfCells.cs",
-              "DocumentMoniker": "C:\\Users\\Xofei\\Desktop\\CourseWork\\ListOfCells.cs",
+              "DocumentMoniker": "C:\\Users\\PROFI\\Desktop\\Xofei\\Game2048\\ListOfCells.cs",
               "RelativeDocumentMoniker": "ListOfCells.cs",
-              "ToolTip": "C:\\Users\\Xofei\\Desktop\\CourseWork\\ListOfCells.cs",
+              "ToolTip": "C:\\Users\\PROFI\\Desktop\\Xofei\\Game2048\\ListOfCells.cs",
               "RelativeToolTip": "ListOfCells.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAwA0AAAAcAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAACcAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-25T11:45:11.346Z",
               "EditorCaption": ""

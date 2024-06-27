@@ -2,20 +2,53 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using System.Collections.Generic;
 
 namespace Game2048;
 
 public partial class GameWindow : Window
 {
-    //public string[,] Array { get; set; }
     bool win = false;
+    public List<Border> borders = [
+        new Border()
+        {
+            Name = "Block00"
+        }
+    ];
     public GameWindow()
     {
         InitializeComponent();
-        PlayingArea.ItemsSource = ListOfCells.cells.ToArray();
+        //PlayingArea.ItemsSource = ListOfCells.cells.ToArray();
+        Block00.Text = Cells.Arr[0, 0].ToString();
+        Block01.Text = Cells.Arr[0, 1].ToString();
+        Block02.Text = Cells.Arr[0, 2].ToString();
+        Block03.Text = Cells.Arr[0, 3].ToString();
+        Block10.Text = Cells.Arr[1, 0].ToString();
+        Block11.Text = Cells.Arr[1, 1].ToString();
+        Block12.Text = Cells.Arr[1, 2].ToString();
+        Block13.Text = Cells.Arr[1, 3].ToString();
+        Block20.Text = Cells.Arr[2, 0].ToString();
+        Block21.Text = Cells.Arr[2, 1].ToString();
+        Block22.Text = Cells.Arr[2, 2].ToString();
+        Block23.Text = Cells.Arr[2, 3].ToString();
+        Block30.Text = Cells.Arr[3, 0].ToString();
+        Block31.Text = Cells.Arr[3, 1].ToString();
+        Block33.Text = Cells.Arr[3, 3].ToString();
+        Block32.Text = Cells.Arr[3, 2].ToString();
         WinCheck();
         if (win != true)
             FailCheck();
+        //if (Cells.Arr[0, 0] == null)
+        //{
+        //    Border00.Background = Avalonia.Media.Brush.Parse("#cdc2b3");
+        //}
+        foreach (Border border in borders)
+        {
+            if (Cells.Arr[0, 0] == null)
+            {
+                border.Background = Avalonia.Media.Brush.Parse("#cdc2b3");
+            }
+        }
     }
     public void MoveRight(object sender, RoutedEventArgs args)
     {
