@@ -107,10 +107,10 @@
 		<Button Name="LeftButton" Click="MoveLeft" HorizontalAlignment="Center" Background="#baaca1" Foreground="#fffdf6">
 			Влево
 		</Button>
-		<Button Name="UpButton" HorizontalAlignment="Center" Background="#baaca1" Foreground="#fffdf6">
+		<Button Name="UpButton" Click="MoveUp" HorizontalAlignment="Center" Background="#baaca1" Foreground="#fffdf6">
 			Вверх
 		</Button>
-		<Button Name="DownButton" HorizontalAlignment="Center" Background="#baaca1" Foreground="#fffdf6">
+		<Button Name="DownButton" Click="MoveDown" HorizontalAlignment="Center" Background="#baaca1" Foreground="#fffdf6">
 			Вниз
 		</Button>
 	</StackPanel>
