@@ -13,15 +13,15 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Game2048
-build_property.ProjectDir = C:\Users\Xofei\Desktop\CourseWork\
+build_property.ProjectDir = C:\Users\PROFI\Desktop\Xofei\Game2048\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[C:/Users/Xofei/Desktop/CourseWork/App.axaml]
+[C:/Users/PROFI/Desktop/Xofei/Game2048/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Xofei/Desktop/CourseWork/GameWindow.axaml]
+[C:/Users/PROFI/Desktop/Xofei/Game2048/GameWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Xofei/Desktop/CourseWork/MainWindow.axaml]
+[C:/Users/PROFI/Desktop/Xofei/Game2048/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

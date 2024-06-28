@@ -9,7 +9,7 @@ namespace Game2048;
 
 public partial class GameWindow : Window
 {
-    bool win = false;
+    //bool win = false;
     public List<Border> borders = [
         new Border()
         {
@@ -20,6 +20,7 @@ public partial class GameWindow : Window
     {
         InitializeComponent();
         //PlayingArea.ItemsSource = ListOfCells.cells.ToArray();
+        NewBlock();
         Filling();
         WinOrFailCheck();
         //WinCheck();
@@ -37,13 +38,13 @@ public partial class GameWindow : Window
         //    }
         //}
     }
-    public void Filling()
+    public void NewBlock()
     {
         int newCells = 0;
         int filledCells = 0;
         for (int i = 0; i < Cells.Arr.GetLength(0); i++)
         {
-            for (int j = 0; j <  Cells.Arr.GetLength(1); j++)
+            for (int j = 0; j < Cells.Arr.GetLength(1); j++)
             {
                 if (Cells.Arr[i, j] != null)
                 {
@@ -61,7 +62,7 @@ public partial class GameWindow : Window
         }
         while (newCells < 2)
         {
-            Random random = new Random();
+            Random random = new();
             int x = random.Next(0, 4);
             int y = random.Next(0, 4);
             if (Cells.Arr[x, y] == null)
@@ -70,6 +71,9 @@ public partial class GameWindow : Window
                 newCells++;
             }
         }
+    }
+    public void Filling()
+    {
         Block00.Text = Cells.Arr[0, 0].ToString();
         Block01.Text = Cells.Arr[0, 1].ToString();
         Block02.Text = Cells.Arr[0, 2].ToString();
@@ -86,6 +90,22 @@ public partial class GameWindow : Window
         Block31.Text = Cells.Arr[3, 1].ToString();
         Block33.Text = Cells.Arr[3, 3].ToString();
         Block32.Text = Cells.Arr[3, 2].ToString();
+    }
+    public bool MoveLeftCheck()
+    {
+        bool canMove = false;
+        for (int i = 0;  i < Cells.Arr.GetLength(0); i++)
+        {
+            for (int j = 0; j < Cells.Arr.GetLength(1) - 1; j++)
+            {
+                if (Cells.Arr[i, j] == Cells.Arr[i, j + 1] || Cells.Arr[i, j] == null)
+                {
+                    canMove = true;
+                    break;
+                }
+            }
+        }
+        return canMove;
     }
     public void MoveLeft(object sender, RoutedEventArgs args)
     {
@@ -173,50 +193,54 @@ public partial class GameWindow : Window
         //        }
         //    }
         //}
-        for (int i = 0; i < Cells.Arr.GetLength(0); i++) //÷икл дл€ прохода по всем строкам по очереди
+        if (MoveLeftCheck())
         {
-            for (int j = 0; j < Cells.Arr.GetLength(1); j++) //÷икл дл€ прохода по всем столбцам в строке по очереди
+            for (int i = 0; i < Cells.Arr.GetLength(0); i++) //÷икл дл€ прохода по всем строкам по очереди
             {
-                if (Cells.Arr[i, j] != null) //”словие на заполненность €чейки
+                for (int j = 0; j < Cells.Arr.GetLength(1); j++) //÷икл дл€ прохода по всем столбцам в строке по очереди
                 {
-                    if (j < Cells.Arr.GetLength(1) - 1) //”словие на то, что €чейка Ќ≈ последн€€, так как последнюю €чейку не сравнить со следующими €чейками, потому что их нет
+                    if (Cells.Arr[i, j] != null) //”словие на заполненность €чейки
                     {
-                        for (int k = j + 1; k < Cells.Arr.GetLength(1); k++) //ѕроходимс€ по всем €чейкам справа от текущей
+                        if (j < Cells.Arr.GetLength(1) - 1) //”словие на то, что €чейка Ќ≈ последн€€, так как последнюю €чейку не сравнить со следующими €чейками, потому что их нет
                         {
-                            if (Cells.Arr[i, k] == null) //ѕровер€ем на заполненность €чейки
+                            for (int k = j + 1; k < Cells.Arr.GetLength(1); k++) //ѕроходимс€ по всем €чейкам справа от текущей
                             {
-                                continue;
-                            }
-                            else if (Cells.Arr[i, j] == Cells.Arr[i, k]) //—равниваем текущую €чейку с €чейкой справа от неЄ
-                            {
-                                Cells.Arr[i, j] += Cells.Arr[i, k];
-                                Cells.Arr[i, k] = null;
-                                break;
-                            }
-                            else
-                            {
-                                break;
+                                if (Cells.Arr[i, k] == null) //ѕровер€ем на заполненность €чейки
+                                {
+                                    continue;
+                                }
+                                else if (Cells.Arr[i, j] == Cells.Arr[i, k]) //—равниваем текущую €чейку с €чейкой справа от неЄ
+                                {
+                                    Cells.Arr[i, j] += Cells.Arr[i, k];
+                                    Cells.Arr[i, k] = null;
+                                    break;
+                                }
+                                else
+                                {
+                                    break;
+                                }
                             }
                         }
-                    }
-                    if (j > 0) //ѕровер€ем текущую €чейку на то, что она не перва€
-                    {
-                        int? clipboard = Cells.Arr[i, j]; //Ѕуфер дл€ текущей €чейки
-                        for (int k = j - 1; k >= 0; k--) //ѕроходимс€ по всем пустым €чейкам слева от текущей
+                        if (j > 0) //ѕровер€ем текущую €чейку на то, что она не перва€
                         {
-                            if (Cells.Arr[i, k] == null)
+                            int? clipboard = Cells.Arr[i, j]; //Ѕуфер дл€ текущей €чейки
+                            for (int k = j - 1; k >= 0; k--) //ѕроходимс€ по всем пустым €чейкам слева от текущей
                             {
-                                Cells.Arr[i, k] = clipboard; //ѕередвигаем
-                                Cells.Arr[i, k + 1] = null;
+                                if (Cells.Arr[i, k] == null)
+                                {
+                                    Cells.Arr[i, k] = clipboard; //ѕередвигаем
+                                    Cells.Arr[i, k + 1] = null;
+                                }
                             }
                         }
                     }
                 }
             }
+            NewBlock();
+            GameWindow gameWindow = new();
+            gameWindow.Show();
+            Close();
         }
-        GameWindow gameWindow = new();
-        gameWindow.Show();
-        Close();
     }
     public void MoveRight(object sender, RoutedEventArgs args)
     {
@@ -443,63 +467,63 @@ public partial class GameWindow : Window
         gameWindow.Show();
         Close();
     }
-    public void WinCheck()
-    {
-        foreach (Cells row in ListOfCells.cells)
-        {
-            if (row.Cell1 == 2048 || row.Cell2 == 2048 || row.Cell3 == 2048 || row.Cell4 == 2048)
-            {
-                Victory.IsVisible = true;
-                RightButton.IsVisible = false;
-                LeftButton.IsVisible = false;
-                UpButton.IsVisible = false;
-                DownButton.IsVisible = false;
-                win = true;
-            }
-        }
-    }
-    public void FailCheck()
-    {
-        bool checking = true;
-        foreach(Cells row in ListOfCells.cells)
-        {
-            if (row.Cell1 == null || row.Cell2 == null || row.Cell3 == null || row.Cell4 == null)
-            {
-                checking = false;
-            }
-        }
-        if (checking == true && ListOfCells.cells[0].Cell1 != ListOfCells.cells[0].Cell2 &&
-            ListOfCells.cells[0].Cell1 != ListOfCells.cells[1].Cell1 &&
-            ListOfCells.cells[0].Cell2 != ListOfCells.cells[0].Cell3 &&
-            ListOfCells.cells[0].Cell2 != ListOfCells.cells[1].Cell2 &&
-            ListOfCells.cells[0].Cell3 != ListOfCells.cells[0].Cell4 &&
-            ListOfCells.cells[0].Cell3 != ListOfCells.cells[1].Cell3 &&
-            ListOfCells.cells[0].Cell4 != ListOfCells.cells[1].Cell4 &&
-            ListOfCells.cells[1].Cell1 != ListOfCells.cells[1].Cell2 &&
-            ListOfCells.cells[1].Cell1 != ListOfCells.cells[2].Cell1 &&
-            ListOfCells.cells[1].Cell2 != ListOfCells.cells[1].Cell3 &&
-            ListOfCells.cells[1].Cell2 != ListOfCells.cells[2].Cell2 &&
-            ListOfCells.cells[1].Cell3 != ListOfCells.cells[1].Cell4 &&
-            ListOfCells.cells[1].Cell3 != ListOfCells.cells[2].Cell3 &&
-            ListOfCells.cells[1].Cell4 != ListOfCells.cells[2].Cell4 &&
-            ListOfCells.cells[2].Cell1 != ListOfCells.cells[2].Cell2 &&
-            ListOfCells.cells[2].Cell1 != ListOfCells.cells[3].Cell1 &&
-            ListOfCells.cells[2].Cell2 != ListOfCells.cells[2].Cell3 &&
-            ListOfCells.cells[2].Cell2 != ListOfCells.cells[3].Cell2 &&
-            ListOfCells.cells[2].Cell3 != ListOfCells.cells[2].Cell4 &&
-            ListOfCells.cells[2].Cell3 != ListOfCells.cells[3].Cell3 &&
-            ListOfCells.cells[2].Cell4 != ListOfCells.cells[3].Cell4 &&
-            ListOfCells.cells[3].Cell1 != ListOfCells.cells[3].Cell2 &&
-            ListOfCells.cells[3].Cell2 != ListOfCells.cells[3].Cell3 &&
-            ListOfCells.cells[3].Cell3 != ListOfCells.cells[3].Cell4)
-        {
-            Fail.IsVisible = true;
-            RightButton.IsVisible = false;
-            LeftButton.IsVisible = false;
-            UpButton.IsVisible = false;
-            DownButton.IsVisible = false;
-        }
-    }
+    //public void WinCheck()
+    //{
+    //    foreach (Cells row in ListOfCells.cells)
+    //    {
+    //        if (row.Cell1 == 2048 || row.Cell2 == 2048 || row.Cell3 == 2048 || row.Cell4 == 2048)
+    //        {
+    //            Victory.IsVisible = true;
+    //            RightButton.IsVisible = false;
+    //            LeftButton.IsVisible = false;
+    //            UpButton.IsVisible = false;
+    //            DownButton.IsVisible = false;
+    //            win = true;
+    //        }
+    //    }
+    //}
+    //public void FailCheck()
+    //{
+    //    bool checking = true;
+    //    foreach(Cells row in ListOfCells.cells)
+    //    {
+    //        if (row.Cell1 == null || row.Cell2 == null || row.Cell3 == null || row.Cell4 == null)
+    //        {
+    //            checking = false;
+    //        }
+    //    }
+    //    if (checking == true && ListOfCells.cells[0].Cell1 != ListOfCells.cells[0].Cell2 &&
+    //        ListOfCells.cells[0].Cell1 != ListOfCells.cells[1].Cell1 &&
+    //        ListOfCells.cells[0].Cell2 != ListOfCells.cells[0].Cell3 &&
+    //        ListOfCells.cells[0].Cell2 != ListOfCells.cells[1].Cell2 &&
+    //        ListOfCells.cells[0].Cell3 != ListOfCells.cells[0].Cell4 &&
+    //        ListOfCells.cells[0].Cell3 != ListOfCells.cells[1].Cell3 &&
+    //        ListOfCells.cells[0].Cell4 != ListOfCells.cells[1].Cell4 &&
+    //        ListOfCells.cells[1].Cell1 != ListOfCells.cells[1].Cell2 &&
+    //        ListOfCells.cells[1].Cell1 != ListOfCells.cells[2].Cell1 &&
+    //        ListOfCells.cells[1].Cell2 != ListOfCells.cells[1].Cell3 &&
+    //        ListOfCells.cells[1].Cell2 != ListOfCells.cells[2].Cell2 &&
+    //        ListOfCells.cells[1].Cell3 != ListOfCells.cells[1].Cell4 &&
+    //        ListOfCells.cells[1].Cell3 != ListOfCells.cells[2].Cell3 &&
+    //        ListOfCells.cells[1].Cell4 != ListOfCells.cells[2].Cell4 &&
+    //        ListOfCells.cells[2].Cell1 != ListOfCells.cells[2].Cell2 &&
+    //        ListOfCells.cells[2].Cell1 != ListOfCells.cells[3].Cell1 &&
+    //        ListOfCells.cells[2].Cell2 != ListOfCells.cells[2].Cell3 &&
+    //        ListOfCells.cells[2].Cell2 != ListOfCells.cells[3].Cell2 &&
+    //        ListOfCells.cells[2].Cell3 != ListOfCells.cells[2].Cell4 &&
+    //        ListOfCells.cells[2].Cell3 != ListOfCells.cells[3].Cell3 &&
+    //        ListOfCells.cells[2].Cell4 != ListOfCells.cells[3].Cell4 &&
+    //        ListOfCells.cells[3].Cell1 != ListOfCells.cells[3].Cell2 &&
+    //        ListOfCells.cells[3].Cell2 != ListOfCells.cells[3].Cell3 &&
+    //        ListOfCells.cells[3].Cell3 != ListOfCells.cells[3].Cell4)
+    //    {
+    //        Fail.IsVisible = true;
+    //        RightButton.IsVisible = false;
+    //        LeftButton.IsVisible = false;
+    //        UpButton.IsVisible = false;
+    //        DownButton.IsVisible = false;
+    //    }
+    //}
     public void WinOrFailCheck()
     {
         for (int i = 0; i < Cells.Arr.GetLength(0); i++)
