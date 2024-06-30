@@ -9,34 +9,12 @@ namespace Game2048;
 
 public partial class GameWindow : Window
 {
-    //bool win = false;
-    public List<Border> borders = [
-        new Border()
-        {
-            Name = "Block00"
-        }
-    ];
     public GameWindow()
     {
         InitializeComponent();
-        //PlayingArea.ItemsSource = ListOfCells.cells.ToArray();
         NewBlock();
         Filling();
         WinOrFailCheck();
-        //WinCheck();
-        //if (win != true)
-        //    FailCheck();
-        //if (Cells.Arr[0, 0] == null)
-        //{
-        //    Border00.Background = Avalonia.Media.Brush.Parse("#cdc2b3");
-        //}
-        //foreach (Border border in borders)
-        //{
-        //    if (Cells.Arr[0, 0] == null)
-        //    {
-        //        border.Background = Avalonia.Media.Brush.Parse("#cdc2b3");
-        //    }
-        //}
     }
     public void NewBlock()
     {
@@ -74,22 +52,67 @@ public partial class GameWindow : Window
     }
     public void Filling()
     {
-        Block00.Text = Cells.Arr[0, 0].ToString();
-        Block01.Text = Cells.Arr[0, 1].ToString();
-        Block02.Text = Cells.Arr[0, 2].ToString();
-        Block03.Text = Cells.Arr[0, 3].ToString();
-        Block10.Text = Cells.Arr[1, 0].ToString();
-        Block11.Text = Cells.Arr[1, 1].ToString();
-        Block12.Text = Cells.Arr[1, 2].ToString();
-        Block13.Text = Cells.Arr[1, 3].ToString();
-        Block20.Text = Cells.Arr[2, 0].ToString();
-        Block21.Text = Cells.Arr[2, 1].ToString();
-        Block22.Text = Cells.Arr[2, 2].ToString();
-        Block23.Text = Cells.Arr[2, 3].ToString();
-        Block30.Text = Cells.Arr[3, 0].ToString();
-        Block31.Text = Cells.Arr[3, 1].ToString();
-        Block33.Text = Cells.Arr[3, 3].ToString();
-        Block32.Text = Cells.Arr[3, 2].ToString();
+        for (int i = 0; i < Cells.Arr.GetLength(0); i++)
+        {
+            for (int j = 0; j < Cells.Arr.GetLength(1); j++)
+            {
+                TextBlock block = this.FindControl<TextBlock>($"Block{i}{j}");
+                Border border = this.FindControl<Border>($"Border{i}{j}");
+                block.Text = Cells.Arr[i, j].ToString();
+                switch (Cells.Arr[i, j])
+                {
+                    case 2:
+                        border.Background = Avalonia.Media.Brush.Parse("#eee4db");
+                        block.Foreground = Avalonia.Media.Brush.Parse("#776e65");
+                        break;
+                    case 4:
+                        border.Background = Avalonia.Media.Brush.Parse("#efe1c7");
+                        block.Foreground = Avalonia.Media.Brush.Parse("#776e65");
+                        break;
+                    case 8:
+                        border.Background = Avalonia.Media.Brush.Parse("#f2b179");
+                        block.Foreground = Avalonia.Media.Brush.Parse("#fdfaf3");
+                        break;
+                    case 16:
+                        border.Background = Avalonia.Media.Brush.Parse("#f69663");
+                        block.Foreground = Avalonia.Media.Brush.Parse("#faf6f3");
+                        break;
+                    case 32:
+                        border.Background = Avalonia.Media.Brush.Parse("#f08261");
+                        block.Foreground = Avalonia.Media.Brush.Parse("#f4f3ef");
+                        break;
+                    case 64:
+                        border.Background = Avalonia.Media.Brush.Parse("#f65e3b");
+                        block.Foreground = Avalonia.Media.Brush.Parse("#f9f6f2");
+                        break;
+                    case 128:
+                        border.Background = Avalonia.Media.Brush.Parse("#edd072");
+                        block.Foreground = Avalonia.Media.Brush.Parse("#f7f7f5");
+                        break;
+                    case 256:
+                        border.Background = Avalonia.Media.Brush.Parse("#edcc61");
+                        block.Foreground = Avalonia.Media.Brush.Parse("#f9f6f2");
+                        break;
+                    case 512:
+                        border.Background = Avalonia.Media.Brush.Parse("#edc94f");
+                        block.Foreground = Avalonia.Media.Brush.Parse("#f8f5ee");
+                        break;
+                    case 1024:
+                        border.Background = Avalonia.Media.Brush.Parse("#edc53f");
+                        block.Foreground = Avalonia.Media.Brush.Parse("#f9f6f2");
+                        block.FontSize = 28;
+                        break;
+                    case 2048:
+                        border.Background = Avalonia.Media.Brush.Parse("#edc22e");
+                        block.Foreground = Avalonia.Media.Brush.Parse("#f9f6f2");
+                        block.FontSize = 28;
+                        break;
+                    default:
+                        border.Background = Avalonia.Media.Brush.Parse("#cdc2b3");
+                        break;
+                }
+            }
+        }
     }
     public bool MoveLeftCheck()
     {
@@ -107,92 +130,56 @@ public partial class GameWindow : Window
         }
         return canMove;
     }
+    public bool MoveRightCheck()
+    {
+        bool canMove = false;
+        for (int i = Cells.Arr.GetLength(0) - 1; i >= 0; i--)
+        {
+            for (int j = Cells.Arr.GetLength(1) - 1; j > 0; j--)
+            {
+                if (Cells.Arr[i, j] == Cells.Arr[i, j - 1] || Cells.Arr[i, j] == null)
+                {
+                    canMove = true;
+                    break;
+                }
+            }
+        }
+        return canMove;
+    }
+    public bool MoveUpCheck()
+    {
+        bool canMove = false;
+        for (int j = 0; j < Cells.Arr.GetLength(1); j++)
+        {
+            for (int i = 0; i < Cells.Arr.GetLength(0) - 1; i++)
+            {
+                if (Cells.Arr[i, j] == Cells.Arr[i + 1, j] || Cells.Arr[i, j] == null)
+                {
+                    canMove = true;
+                    break;
+                }
+            }
+        }
+        return canMove;
+    }
+    public bool MoveDownCheck()
+    {
+        bool canMove = false;
+        for (int j = Cells.Arr.GetLength(1) - 1; j >= 0; j--)
+        {
+            for (int i = Cells.Arr.GetLength(0) - 1; i > 0; i--)
+            {
+                if (Cells.Arr[i, j] == Cells.Arr[i - 1, j] || Cells.Arr[i, j] == null)
+                {
+                    canMove = true;
+                    break;
+                }
+            }
+        }
+        return canMove;
+    }
     public void MoveLeft(object sender, RoutedEventArgs args)
     {
-        //foreach (Cells row in ListOfCells.cells)
-        //{
-        //    if (row.Cell1 != null)
-        //    {
-        //        if (row.Cell1 == row.Cell2)
-        //        {
-        //            row.Cell1 += row.Cell2;
-        //            row.Cell2 = null;
-        //        }
-        //        else if (row.Cell2 == null)
-        //        {
-        //            if (row.Cell1 == row.Cell3)
-        //            {
-        //                row.Cell1 += row.Cell3;
-        //                row.Cell3 = null;
-        //            }
-        //            else if (row.Cell3 == null)
-        //            {
-        //                if (row.Cell1 == row.Cell4)
-        //                {
-        //                    row.Cell1 += row.Cell4;
-        //                    row.Cell4 = null;
-        //                }
-        //            }
-        //        }
-        //    }
-        //    if (row.Cell2 != null)
-        //    {
-        //        if (row.Cell2 == row.Cell3)
-        //        {
-        //            row.Cell2 += row.Cell3;
-        //            row.Cell3 = null;
-        //        }
-        //        else if (row.Cell3 == null)
-        //        {
-        //            if (row.Cell2 == row.Cell4)
-        //            {
-        //                row.Cell2 += row.Cell4;
-        //                row.Cell4 = null;
-        //            }
-        //        }
-        //        if (row.Cell1 == null)
-        //        {
-        //            row.Cell1 = row.Cell2;
-        //            row.Cell2 = null;
-        //        }
-        //    }
-        //    if (row.Cell3 != null)
-        //    {
-        //        if (row.Cell3 == row.Cell4)
-        //        {
-        //            row.Cell3 += row.Cell4;
-        //            row.Cell4 = null;
-        //        }
-        //        if (row.Cell2 == null)
-        //        {
-        //            row.Cell2 = row.Cell3;
-        //            row.Cell3 = null;
-        //            if (row.Cell1 == null)
-        //            {
-        //                row.Cell1 = row.Cell2;
-        //                row.Cell2 = null;
-        //            }
-        //        }
-        //    }
-        //    if (row.Cell4 != null)
-        //    {
-        //        if (row.Cell3 == null)
-        //        {
-        //            row.Cell3 = row.Cell4;
-        //            row.Cell4 = null;
-        //            if (row.Cell2 == null)
-        //            {
-        //                row.Cell2 = row.Cell3;
-        //                row.Cell3 = null;
-        //                if (row.Cell1 == null)
-        //                {
-        //                    row.Cell1 = row.Cell2;
-        //                    row.Cell2 = null;
-        //                }
-        //            }
-        //        }
-        //    }
-        //}
         if (MoveLeftCheck())
         {
             for (int i = 0; i < Cells.Arr.GetLength(0); i++) //÷икл дл€ прохода по всем строкам по очереди
@@ -244,286 +231,154 @@ public partial class GameWindow : Window
     }
     public void MoveRight(object sender, RoutedEventArgs args)
     {
-        //foreach (Cells row in ListOfCells.cells)
-        //{
-        //    if (row.Cell4 != null)
-        //    {
-        //        if (row.Cell4 == row.Cell3)
-        //        {
-        //            row.Cell4 += row.Cell3;
-        //            row.Cell3 = null;
-        //        }
-        //        else if (row.Cell3 == null)
-        //        {
-        //            if (row.Cell4 == row.Cell2)
-        //            {
-        //                row.Cell4 += row.Cell2;
-        //                row.Cell2 = null;
-        //            }
-        //            else if (row.Cell2 == null)
-        //            {
-        //                if (row.Cell4 == row.Cell1)
-        //                {
-        //                    row.Cell4 += row.Cell1;
-        //                    row.Cell1 = null;
-        //                }
-        //            }
-        //        }
-        //    }
-        //    if (row.Cell3 != null)
-        //    {
-        //        if (row.Cell3 == row.Cell2)
-        //        {
-        //            row.Cell3 += row.Cell2;
-        //            row.Cell2 = null;
-        //        }
-        //        else if (row.Cell2 == null)
-        //        {
-        //            if (row.Cell3 == row.Cell1)
-        //            {
-        //                row.Cell3 += row.Cell1;
-        //                row.Cell1 = null;
-        //            }
-        //        }
-        //        if (row.Cell4 == null)
-        //        {
-        //            row.Cell4 = row.Cell3;
-        //            row.Cell3 = null;
-        //        }
-        //    }
-        //    if (row.Cell2 != null)
-        //    {
-        //        if (row.Cell2 == row.Cell1)
-        //        {
-        //            row.Cell2 += row.Cell1;
-        //            row.Cell1 = null;
-        //        }
-        //        if (row.Cell3 == null)
-        //        {
-        //            row.Cell3 = row.Cell2;
-        //            row.Cell2 = null;
-        //            if (row.Cell4 == null)
-        //            {
-        //                row.Cell4 = row.Cell3;
-        //                row.Cell3 = null;
-        //            }
-        //        }
-        //    }
-        //    if (row.Cell1 != null)
-        //    {
-        //        if (row.Cell2 == null)
-        //        {
-        //            row.Cell2 = row.Cell1;
-        //            row.Cell1 = null;
-        //            if (row.Cell3 == null)
-        //            {
-        //                row.Cell3 = row.Cell2;
-        //                row.Cell2 = null;
-        //                if (row.Cell4 == null)
-        //                {
-        //                    row.Cell4 = row.Cell3;
-        //                    row.Cell3 = null;
-        //                }
-        //            }
-        //        }
-        //    }
-        //}
-        for (int i = Cells.Arr.GetLength(0) - 1; i >= 0; i--)
-        {
-            for (int j = Cells.Arr.GetLength(1) - 1; j >= 0; j--)
-            {
-                if (Cells.Arr[i, j] != null)
-                {
-                    if (j > 0)
-                    {
-                        for (int k = j - 1; k >= 0; k--)
-                        {
-                            if (Cells.Arr[i, k] == null)
-                            {
-                                continue;
-                            }
-                            else if (Cells.Arr[i, j] == Cells.Arr[i, k])
-                            {
-                                Cells.Arr[i, j] += Cells.Arr[i, k];
-                                Cells.Arr[i, k] = null;
-                                break;
-                            }
-                            else
-                            {
-                                break;
-                            }
-                        }
-                    }
-                    if (j < Cells.Arr.GetLength(1) - 1)
-                    {
-                        int? clipboard = Cells.Arr[i, j];
-                        for (int k = j + 1; k < Cells.Arr.GetLength(1); k++)
-                        {
-                            if (Cells.Arr[i, k] == null)
-                            {
-                                Cells.Arr[i, k] = clipboard;
-                                Cells.Arr[i, k - 1] = null;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        GameWindow gameWindow = new();
-        gameWindow.Show();
-        Close();
-    }
-    public void MoveUp(object sender, RoutedEventArgs args)
-    {
-        for (int j = 0; j < Cells.Arr.GetLength(1); j++)
-        {
-            for (int i = 0; i < Cells.Arr.GetLength(0); i++)
-            {
-                if (Cells.Arr[i, j] != null)
-                {
-                    if (i < Cells.Arr.GetLength(0) - 1)
-                    {
-                        for (int k = i + 1; k < Cells.Arr.GetLength(0); k++)
-                        {
-                            if (Cells.Arr[k, j] == null)
-                            {
-                                continue;
-                            }
-                            else if (Cells.Arr[i, j] == Cells.Arr[k, j])
-                            {
-                                Cells.Arr[i, j] += Cells.Arr[k, j];
-                                Cells.Arr[k, j] = null;
-                                break;
-                            }
-                            else
-                            {
-                                break;
-                            }
-                        }
-                    }
-                    if (i > 0)
-                    {
-                        int? clipboard = Cells.Arr[i, j];
-                        for (int k = i - 1; k >= 0; k--)
-                        {
-                            if (Cells.Arr[k, j] == null)
-                            {
-                                Cells.Arr[k, j] = clipboard;
-                                Cells.Arr[k + 1, j] = null;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        GameWindow gameWindow = new();
-        gameWindow.Show();
-        Close();
-    }
-    public void MoveDown(object sender, RoutedEventArgs args)
-    {
-        for (int j = Cells.Arr.GetLength(1) - 1; j >= 0; j--)
+        if (MoveRightCheck())
         {
             for (int i = Cells.Arr.GetLength(0) - 1; i >= 0; i--)
             {
-                if (Cells.Arr[i, j] != null)
+                for (int j = Cells.Arr.GetLength(1) - 1; j >= 0; j--)
                 {
-                    if (i > 0)
+                    if (Cells.Arr[i, j] != null)
                     {
-                        for (int k = i - 1; k >= 0; k--)
+                        if (j > 0)
                         {
-                            if (Cells.Arr[k, j] == null)
+                            for (int k = j - 1; k >= 0; k--)
                             {
-                                continue;
-                            }
-                            else if (Cells.Arr[i, j] == Cells.Arr[k, j])
-                            {
-                                Cells.Arr[i, j] += Cells.Arr[k, j];
-                                Cells.Arr[k, j] = null;
-                                break;
-                            }
-                            else
-                            {
-                                break;
+                                if (Cells.Arr[i, k] == null)
+                                {
+                                    continue;
+                                }
+                                else if (Cells.Arr[i, j] == Cells.Arr[i, k])
+                                {
+                                    Cells.Arr[i, j] += Cells.Arr[i, k];
+                                    Cells.Arr[i, k] = null;
+                                    break;
+                                }
+                                else
+                                {
+                                    break;
+                                }
                             }
                         }
-                    }
-                    if (i < Cells.Arr.GetLength(0) - 1)
-                    {
-                        int? clipboard = Cells.Arr[i, j]; //Ѕуфер дл€ текущей €чейки
-                        for (int k = i + 1; k < Cells.Arr.GetLength(0); k++) //ѕроходимс€ по всем пустым €чейкам слева от текущей
+                        if (j < Cells.Arr.GetLength(1) - 1)
                         {
-                            if (Cells.Arr[k, j] == null)
+                            int? clipboard = Cells.Arr[i, j];
+                            for (int k = j + 1; k < Cells.Arr.GetLength(1); k++)
                             {
-                                Cells.Arr[k, j] = clipboard; //ѕередвигаем
-                                Cells.Arr[k - 1, j] = null;
+                                if (Cells.Arr[i, k] == null)
+                                {
+                                    Cells.Arr[i, k] = clipboard;
+                                    Cells.Arr[i, k - 1] = null;
+                                }
                             }
                         }
                     }
                 }
             }
+            GameWindow gameWindow = new();
+            gameWindow.Show();
+            Close();
         }
-        GameWindow gameWindow = new();
-        gameWindow.Show();
-        Close();
     }
-    //public void WinCheck()
-    //{
-    //    foreach (Cells row in ListOfCells.cells)
-    //    {
-    //        if (row.Cell1 == 2048 || row.Cell2 == 2048 || row.Cell3 == 2048 || row.Cell4 == 2048)
-    //        {
-    //            Victory.IsVisible = true;
-    //            RightButton.IsVisible = false;
-    //            LeftButton.IsVisible = false;
-    //            UpButton.IsVisible = false;
-    //            DownButton.IsVisible = false;
-    //            win = true;
-    //        }
-    //    }
-    //}
-    //public void FailCheck()
-    //{
-    //    bool checking = true;
-    //    foreach(Cells row in ListOfCells.cells)
-    //    {
-    //        if (row.Cell1 == null || row.Cell2 == null || row.Cell3 == null || row.Cell4 == null)
-    //        {
-    //            checking = false;
-    //        }
-    //    }
-    //    if (checking == true && ListOfCells.cells[0].Cell1 != ListOfCells.cells[0].Cell2 &&
-    //        ListOfCells.cells[0].Cell1 != ListOfCells.cells[1].Cell1 &&
-    //        ListOfCells.cells[0].Cell2 != ListOfCells.cells[0].Cell3 &&
-    //        ListOfCells.cells[0].Cell2 != ListOfCells.cells[1].Cell2 &&
-    //        ListOfCells.cells[0].Cell3 != ListOfCells.cells[0].Cell4 &&
-    //        ListOfCells.cells[0].Cell3 != ListOfCells.cells[1].Cell3 &&
-    //        ListOfCells.cells[0].Cell4 != ListOfCells.cells[1].Cell4 &&
-    //        ListOfCells.cells[1].Cell1 != ListOfCells.cells[1].Cell2 &&
-    //        ListOfCells.cells[1].Cell1 != ListOfCells.cells[2].Cell1 &&
-    //        ListOfCells.cells[1].Cell2 != ListOfCells.cells[1].Cell3 &&
-    //        ListOfCells.cells[1].Cell2 != ListOfCells.cells[2].Cell2 &&
-    //        ListOfCells.cells[1].Cell3 != ListOfCells.cells[1].Cell4 &&
-    //        ListOfCells.cells[1].Cell3 != ListOfCells.cells[2].Cell3 &&
-    //        ListOfCells.cells[1].Cell4 != ListOfCells.cells[2].Cell4 &&
-    //        ListOfCells.cells[2].Cell1 != ListOfCells.cells[2].Cell2 &&
-    //        ListOfCells.cells[2].Cell1 != ListOfCells.cells[3].Cell1 &&
-    //        ListOfCells.cells[2].Cell2 != ListOfCells.cells[2].Cell3 &&
-    //        ListOfCells.cells[2].Cell2 != ListOfCells.cells[3].Cell2 &&
-    //        ListOfCells.cells[2].Cell3 != ListOfCells.cells[2].Cell4 &&
-    //        ListOfCells.cells[2].Cell3 != ListOfCells.cells[3].Cell3 &&
-    //        ListOfCells.cells[2].Cell4 != ListOfCells.cells[3].Cell4 &&
-    //        ListOfCells.cells[3].Cell1 != ListOfCells.cells[3].Cell2 &&
-    //        ListOfCells.cells[3].Cell2 != ListOfCells.cells[3].Cell3 &&
-    //        ListOfCells.cells[3].Cell3 != ListOfCells.cells[3].Cell4)
-    //    {
-    //        Fail.IsVisible = true;
-    //        RightButton.IsVisible = false;
-    //        LeftButton.IsVisible = false;
-    //        UpButton.IsVisible = false;
-    //        DownButton.IsVisible = false;
-    //    }
-    //}
+    public void MoveUp(object sender, RoutedEventArgs args)
+    {
+        if (MoveUpCheck())
+        {
+            for (int j = 0; j < Cells.Arr.GetLength(1); j++)
+            {
+                for (int i = 0; i < Cells.Arr.GetLength(0); i++)
+                {
+                    if (Cells.Arr[i, j] != null)
+                    {
+                        if (i < Cells.Arr.GetLength(0) - 1)
+                        {
+                            for (int k = i + 1; k < Cells.Arr.GetLength(0); k++)
+                            {
+                                if (Cells.Arr[k, j] == null)
+                                {
+                                    continue;
+                                }
+                                else if (Cells.Arr[i, j] == Cells.Arr[k, j])
+                                {
+                                    Cells.Arr[i, j] += Cells.Arr[k, j];
+                                    Cells.Arr[k, j] = null;
+                                    break;
+                                }
+                                else
+                                {
+                                    break;
+                                }
+                            }
+                        }
+                        if (i > 0)
+                        {
+                            int? clipboard = Cells.Arr[i, j];
+                            for (int k = i - 1; k >= 0; k--)
+                            {
+                                if (Cells.Arr[k, j] == null)
+                                {
+                                    Cells.Arr[k, j] = clipboard;
+                                    Cells.Arr[k + 1, j] = null;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            GameWindow gameWindow = new();
+            gameWindow.Show();
+            Close();
+        }
+    }
+    public void MoveDown(object sender, RoutedEventArgs args)
+    {
+        if (MoveDownCheck())
+        {
+            for (int j = Cells.Arr.GetLength(1) - 1; j >= 0; j--)
+            {
+                for (int i = Cells.Arr.GetLength(0) - 1; i >= 0; i--)
+                {
+                    if (Cells.Arr[i, j] != null)
+                    {
+                        if (i > 0)
+                        {
+                            for (int k = i - 1; k >= 0; k--)
+                            {
+                                if (Cells.Arr[k, j] == null)
+                                {
+                                    continue;
+                                }
+                                else if (Cells.Arr[i, j] == Cells.Arr[k, j])
+                                {
+                                    Cells.Arr[i, j] += Cells.Arr[k, j];
+                                    Cells.Arr[k, j] = null;
+                                    break;
+                                }
+                                else
+                                {
+                                    break;
+                                }
+                            }
+                        }
+                        if (i < Cells.Arr.GetLength(0) - 1)
+                        {
+                            int? clipboard = Cells.Arr[i, j];
+                            for (int k = i + 1; k < Cells.Arr.GetLength(0); k++)
+                            {
+                                if (Cells.Arr[k, j] == null)
+                                {
+                                    Cells.Arr[k, j] = clipboard;
+                                    Cells.Arr[k - 1, j] = null;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            GameWindow gameWindow = new();
+            gameWindow.Show();
+            Close();
+        }
+    }
     public void WinOrFailCheck()
     {
         for (int i = 0; i < Cells.Arr.GetLength(0); i++)
@@ -537,6 +392,7 @@ public partial class GameWindow : Window
                     LeftButton.IsVisible = false;
                     UpButton.IsVisible = false;
                     DownButton.IsVisible = false;
+                    PlayAgain.IsVisible = true;
                     break;
                 }
             }
@@ -575,7 +431,21 @@ public partial class GameWindow : Window
                 LeftButton.IsVisible = false;
                 UpButton.IsVisible = false;
                 DownButton.IsVisible = false;
+                PlayAgain.IsVisible = true;
             }
         }
+    }
+    public void Restart(object sender, RoutedEventArgs args)
+    {
+        for (int i = 0; i < Cells.Arr.GetLength(0); i++)
+        {
+            for (int j = 0; j < Cells.Arr.GetLength(1); j++)
+            {
+                Cells.Arr[i, j] = null;
+            }
+        }
+        GameWindow gameWindow = new();
+        gameWindow.Show();
+        Close();
     }
 }

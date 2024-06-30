@@ -18,101 +18,106 @@
 			Вы проиграли
 		</TextBlock>
 		<Border HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="3" Background="#bbaba1">
-			<!--<ListBox Name="PlayingArea" Width="390" Height="390" Background="#bbaba1">
-				<ListBox.ItemTemplate>
-					<DataTemplate>
-						<StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-							<Border Width="100" Height="100" CornerRadius="2" Background="#f0e4dc">
-								<TextBlock Text="{Binding Cell1}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="#756e66"/>
-							</Border>
-							<Border Width="100" Height="100" CornerRadius="2" Background="#f0e4dc">
-								<TextBlock Text="{Binding Cell2}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="#756e66"/>
-							</Border>
-							<Border Width="100" Height="100" CornerRadius="2" Background="#f0e4dc">
-								<TextBlock Text="{Binding Cell3}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="#756e66"/>
-							</Border>
-							<Border Width="100" Height="100" CornerRadius="2" Background="#f0e4dc">
-								<TextBlock Text="{Binding Cell4}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="#756e66"/>
-							</Border>
-						</StackPanel>
-					</DataTemplate>
-				</ListBox.ItemTemplate>
-			</ListBox>-->
 			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="100"/>
+					<ColumnDefinition Width="95"/>
+					<ColumnDefinition Width="95"/>
+					<ColumnDefinition Width="100"/>
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="100"/>
+					<RowDefinition Height="95"/>
+					<RowDefinition Height="95"/>
+					<RowDefinition Height="100"/>
+				</Grid.RowDefinitions>
+				<Border Name="Border00" Grid.Row="0" Grid.Column="0" Margin="10 10 5 5" CornerRadius="2" Background="#cdc2b3">
+					<TextBlock Name="Block00" Text="00" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="Black"/>
+				</Border>
+				<Border Name="Border01" Grid.Row="0" Grid.Column="1" Margin="5 10 5 5" CornerRadius="2" Background="#cdc2b3">
+					<TextBlock Name="Block01" Text="01" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="Black"/>
+				</Border>
+				<Border Name="Border02" Grid.Row="0" Grid.Column="2" Margin="5 10 5 5" CornerRadius="2" Background="#cdc2b3">
+					<TextBlock Name="Block02" Text="02" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="Black"/>
+				</Border>
+				<Border Name="Border03" Grid.Row="0" Grid.Column="3" Margin="5 10 10 5" CornerRadius="2" Background="#cdc2b3">
+					<TextBlock Name="Block03" Text="03" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="Black"/>
+				</Border>
+				<Border Name="Border10" Grid.Row="1" Grid.Column="0" Margin="10 5 5 5" CornerRadius="2" Background="#cdc2b3">
+					<TextBlock Name="Block10" Text="10" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="Black"/>
+				</Border>
+				<Border Name="Border11" Grid.Row="1" Grid.Column="1" Margin="5" CornerRadius="2" Background="#cdc2b3">
+					<TextBlock Name="Block11" Text="11" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="Black"/>
+				</Border>
+				<Border Name="Border12" Grid.Row="1" Grid.Column="2" Margin="5" CornerRadius="2" Background="#cdc2b3">
+					<TextBlock Name="Block12" Text="12" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="Black"/>
+				</Border>
+				<Border Name="Border13" Grid.Row="1" Grid.Column="3" Margin="5 5 10 5" CornerRadius="2" Background="#cdc2b3">
+					<TextBlock Name="Block13" Text="13" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="Black"/>
+				</Border>
+				<Border Name="Border20" Grid.Row="2" Grid.Column="0" Margin="10 5 5 5" CornerRadius="2" Background="#cdc2b3">
+					<TextBlock Name="Block20" Text="20" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="Black"/>
+				</Border>
+				<Border Name="Border21" Grid.Row="2" Grid.Column="1" Margin="5" CornerRadius="2" Background="#cdc2b3">
+					<TextBlock Name="Block21" Text="21" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="Black"/>
+				</Border>
+				<Border Name="Border22" Grid.Row="2" Grid.Column="2" Margin="5" CornerRadius="2" Background="#cdc2b3">
+					<TextBlock Name="Block22" Text="22" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="Black"/>
+				</Border>
+				<Border Name="Border23" Grid.Row="2" Grid.Column="3" Margin="5 5 10 5" CornerRadius="2" Background="#cdc2b3">
+					<TextBlock Name="Block23" Text="23" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="Black"/>
+				</Border>
+				<Border Name="Border30" Grid.Row="3" Grid.Column="0" Margin="10 5 5 10" CornerRadius="2" Background="#cdc2b3">
+					<TextBlock Name="Block30" Text="30" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="Black"/>
+				</Border>
+				<Border Name="Border31" Grid.Row="3" Grid.Column="1" Margin="5 5 5 10" CornerRadius="2" Background="#cdc2b3">
+					<TextBlock Name="Block31" Text="31" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="Black"/>
+				</Border>
+				<Border Name="Border32" Grid.Row="3" Grid.Column="2" Margin="5 5 5 10" CornerRadius="2" Background="#cdc2b3">
+					<TextBlock Name="Block32" Text="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="Black"/>
+				</Border>
+				<Border Name="Border33" Grid.Row="3" Grid.Column="3" Margin="5 5 10 10" CornerRadius="2" Background="#cdc2b3">
+					<TextBlock Name="Block33" Text="33" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="Black"/>
+				</Border>
+			</Grid>
+		</Border>
+		<Button Name="PlayAgain" Click="Restart" IsVisible="False" Margin="30" HorizontalAlignment="Center" Background="#baaca1" Foreground="#fffdf6">
+			<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Black" Foreground="#fffdf6">
+				Играть снова
+			</TextBlock>
+		</Button>
+		<Grid Margin="0 10 0 0" HorizontalAlignment="Center">
 			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="100"/>
-				<ColumnDefinition Width="95"/>
-				<ColumnDefinition Width="95"/>
-				<ColumnDefinition Width="100"/>
+				<ColumnDefinition Width="50"/>
+				<ColumnDefinition Width="50"/>
+				<ColumnDefinition Width="50"/>
 			</Grid.ColumnDefinitions>
 			<Grid.RowDefinitions>
-				<RowDefinition Height="100"/>
-				<RowDefinition Height="95"/>
-				<RowDefinition Height="95"/>
-				<RowDefinition Height="100"/>
+				<RowDefinition Height="50"/>
+				<RowDefinition Height="50"/>
+				<RowDefinition Height="50"/>
 			</Grid.RowDefinitions>
-			<Border Name="Border00" Grid.Row="0" Grid.Column="0" Margin="10 10 5 5" CornerRadius="2" Background="#f0e4dc">
-				<TextBlock Name="Block00" Text="00" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="Black"/>
-			</Border>
-			<Border Grid.Row="0" Grid.Column="1" Margin="5 10 5 5" CornerRadius="2" Background="#f0e4dc">
-				<TextBlock Name="Block01" Text="01" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="Black"/>
-			</Border>
-			<Border Grid.Row="0" Grid.Column="2" Margin="5 10 5 5" CornerRadius="2" Background="#f0e4dc">
-				<TextBlock Name="Block02" Text="02" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="Black"/>
-			</Border>
-			<Border Grid.Row="0" Grid.Column="3" Margin="5 10 10 5" CornerRadius="2" Background="#f0e4dc">
-				<TextBlock Name="Block03" Text="03" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="Black"/>
-			</Border>
-			<Border Grid.Row="1" Grid.Column="0" Margin="10 5 5 5" CornerRadius="2" Background="#f0e4dc">
-				<TextBlock Name="Block10" Text="10" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="Black"/>
-			</Border>
-			<Border Grid.Row="1" Grid.Column="1" Margin="5" CornerRadius="2" Background="#f0e4dc">
-				<TextBlock Name="Block11" Text="11" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="Black"/>
-			</Border>
-			<Border Grid.Row="1" Grid.Column="2" Margin="5" CornerRadius="2" Background="#f0e4dc">
-				<TextBlock Name="Block12" Text="12" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="Black"/>
-			</Border>
-			<Border Grid.Row="1" Grid.Column="3" Margin="5 5 10 5" CornerRadius="2" Background="#f0e4dc">
-				<TextBlock Name="Block13" Text="13" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="Black"/>
-			</Border>
-			<Border Grid.Row="2" Grid.Column="0" Margin="10 5 5 5" CornerRadius="2" Background="#f0e4dc">
-				<TextBlock Name="Block20" Text="20" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="Black"/>
-			</Border>
-			<Border Grid.Row="2" Grid.Column="1" Margin="5" CornerRadius="2" Background="#f0e4dc">
-				<TextBlock Name="Block21" Text="21" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="Black"/>
-			</Border>
-			<Border Grid.Row="2" Grid.Column="2" Margin="5" CornerRadius="2" Background="#f0e4dc">
-				<TextBlock Name="Block22" Text="22" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="Black"/>
-			</Border>
-			<Border Grid.Row="2" Grid.Column="3" Margin="5 5 10 5" CornerRadius="2" Background="#f0e4dc">
-				<TextBlock Name="Block23" Text="23" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="Black"/>
-			</Border>
-			<Border Grid.Row="3" Grid.Column="0" Margin="10 5 5 10" CornerRadius="2" Background="#f0e4dc">
-				<TextBlock Name="Block30" Text="30" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="Black"/>
-			</Border>
-			<Border Grid.Row="3" Grid.Column="1" Margin="5 5 5 10" CornerRadius="2" Background="#f0e4dc">
-				<TextBlock Name="Block31" Text="31" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="Black"/>
-			</Border>
-			<Border Grid.Row="3" Grid.Column="2" Margin="5 5 5 10" CornerRadius="2" Background="#f0e4dc">
-				<TextBlock Name="Block32" Text="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="Black"/>
-			</Border>
-			<Border Grid.Row="3" Grid.Column="3" Margin="5 5 10 10" CornerRadius="2" Background="#f0e4dc">
-				<TextBlock Name="Block33" Text="33" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="Black"/>
-			</Border>
+			<Button Grid.Row="0" Grid.Column="1" Name="UpButton" Click="MoveUp" Width="50" Height="50" HorizontalAlignment="Center" Background="#baaca1" Foreground="#fffdf6">
+				<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Black" Foreground="#fffdf6">
+					↑
+				</TextBlock>
+			</Button>
+			<Button Grid.Row="1" Grid.Column="0" Name="LeftButton" Click="MoveLeft" Width="50" Height="50" HorizontalAlignment="Center" Background="#baaca1" Foreground="#fffdf6">
+				<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Black" Foreground="#fffdf6">
+					←
+				</TextBlock>
+			</Button>
+			<Button Grid.Row="1" Grid.Column="2" Name="RightButton" Click="MoveRight" Width="50" Height="50" HorizontalAlignment="Center" Background="#baaca1" Foreground="#fffdf6">
+				<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Black" Foreground="#fffdf6">
+					→
+				</TextBlock>
+			</Button>
+			<Button Grid.Row="2" Grid.Column="1" Name="DownButton" Click="MoveDown" Width="50" Height="50" HorizontalAlignment="Center" Background="#baaca1" Foreground="#fffdf6">
+				<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Black" Foreground="#fffdf6">
+					↓
+				</TextBlock>
+			</Button>
 		</Grid>
-		</Border>
-		<Button Name="RightButton" Click="MoveRight" HorizontalAlignment="Center" Background="#baaca1" Foreground="#fffdf6">
-			Вправо
-		</Button>
-		<Button Name="LeftButton" Click="MoveLeft" HorizontalAlignment="Center" Background="#baaca1" Foreground="#fffdf6">
-			Влево
-		</Button>
-		<Button Name="UpButton" Click="MoveUp" HorizontalAlignment="Center" Background="#baaca1" Foreground="#fffdf6">
-			Вверх
-		</Button>
-		<Button Name="DownButton" Click="MoveDown" HorizontalAlignment="Center" Background="#baaca1" Foreground="#fffdf6">
-			Вниз
-		</Button>
 	</StackPanel>
-	
+
 </Window>
