@@ -16,6 +16,13 @@ public partial class GameWindow : Window
         Filling();
         WinOrFailCheck();
     }
+    public GameWindow(bool move)
+    {
+        InitializeComponent();
+        NewBlock(move);
+        Filling();
+        WinOrFailCheck();
+    }
     public void NewBlock()
     {
         int newCells = 0;
@@ -50,6 +57,44 @@ public partial class GameWindow : Window
             }
         }
     }
+    public void NewBlock(bool move)
+    {
+        if (move)
+        {
+            int newCells = 0;
+            int filledCells = 0;
+            for (int i = 0; i < Cells.Arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < Cells.Arr.GetLength(1); j++)
+                {
+                    if (Cells.Arr[i, j] != null)
+                    {
+                        filledCells++;
+                    }
+                }
+            }
+            if (filledCells > 0)
+            {
+                newCells++;
+            }
+            if (filledCells == 16)
+            {
+                newCells = 2;
+            }
+            while (newCells < 2)
+            {
+                Random random = new();
+                int x = random.Next(0, 4);
+                int y = random.Next(0, 4);
+                if (Cells.Arr[x, y] == null)
+                {
+                    Cells.Arr[x, y] = 2;
+                    newCells++;
+                }
+            }
+        }
+    }
+
     public void Filling()
     {
         for (int i = 0; i < Cells.Arr.GetLength(0); i++)
@@ -223,8 +268,8 @@ public partial class GameWindow : Window
                     }
                 }
             }
-            NewBlock();
-            GameWindow gameWindow = new();
+            bool move = true;
+            GameWindow gameWindow = new(move);
             gameWindow.Show();
             Close();
         }
@@ -274,7 +319,8 @@ public partial class GameWindow : Window
                     }
                 }
             }
-            GameWindow gameWindow = new();
+            bool move = true;
+            GameWindow gameWindow = new(move);
             gameWindow.Show();
             Close();
         }
@@ -324,7 +370,8 @@ public partial class GameWindow : Window
                     }
                 }
             }
-            GameWindow gameWindow = new();
+            bool move = true;
+            GameWindow gameWindow = new(move);
             gameWindow.Show();
             Close();
         }
@@ -374,7 +421,8 @@ public partial class GameWindow : Window
                     }
                 }
             }
-            GameWindow gameWindow = new();
+            bool move = true;
+            GameWindow gameWindow = new(move);
             gameWindow.Show();
             Close();
         }
